@@ -13,13 +13,13 @@ Vagrant.configure("2") do |config|
 
     provisioner = Vagrant::Util::Platform.windows? ? :guest_ansible : :ansible
 
-    config.vm.synced_folder "C:\\Users\\Flautz\\WebstormProjects\\BT2", "/var/www"
+    #config.vm.synced_folder "C:\\Users\\Flautz\\WebstormProjects\\BT3", "/var/www"
 
     config.vm.provider :virtualbox do |v|
         v.name = "vagrant_default"
         v.customize [
             "modifyvm", :id,
-            "--name", "BTAPI",
+            "--name", "BTAPI1",
             "--memory", 2048,
             "--natdnshostresolver1", "on",
             "--cpus", 2,
